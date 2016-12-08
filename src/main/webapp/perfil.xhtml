@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/template_page.xhtml">
+		<ui:define name="titulo_menu"> 
+				Página de Perfil
+			</ui:define>
+
+		<ui:define name="content">
+		
+			<h1 style="margin-top:50; ">Meu perfil</h1>
+			<p:separator />
+			<p:messages/>
+			<h:form id="formPerfil">
+
+				<h:panelGrid columns="2">
+
+					<h:panelGrid columns="2">
+
+						<f:facet name="header">
+							<!-- TODO colocar imagem de forma dinamica -->
+							 
+							 <img src="#{perfilBean.userImage}"/>  
+						</f:facet>
+
+						<p:commandButton id="modalDialogButton" value="Tirar foto" onclick="PF('dlg2').show();" type="button"/>  
+
+						
+						<h:form>  
+							<p:dialog id="modalDialog" header="Modal Dialog" widgetVar="dlg2" modal="false" >
+				                <h:form enctype="multipart/form-data">
+				                    <p:outputPanel id="outputPanelStudentUpload">
+				
+				                        <p:layout style="min-width:800px;min-height:300px;" >  
+				                            <p:layoutUnit header="Foto Original" position="west"  size="400" resizable="true">  
+				                                <p:photoCam widgetVar="pc" listener="#{perfilBean.oncapture}" update="photos" />
+				                            </p:layoutUnit>  
+				                            <p:layoutUnit header="Foto Tirada"  position="center" >  
+				                                <p:imageSwitch effect="zoom" id="photos">
+				                                    
+				                                </p:imageSwitch>
+				                            </p:layoutUnit>  
+				                        </p:layout> 
+				                        <p:commandButton type="button" value="Capture" onclick="PF('pc').capture()"/>
+				                    </p:outputPanel>
+				                </h:form>
+				            </p:dialog>
+			            </h:form> 	
+			            	        
+				        
+						
+
+					</h:panelGrid>
+
+
+
+					<h:panelGrid columns="3">
+
+						<p:outputLabel for="nome" value="Nome" />
+						<h:inputText id="nome" value="#{loginBean.usuario.nome}" required="true" label="Nome" />
+						<p:message for="nome"/>
+
+						<p:outputLabel for="email" value="Email" />
+						<h:inputText id="email" value="#{loginBean.usuario.email}" required="true" label="Email" />
+						<p:message for="email"/>
+
+
+						<p:outputLabel for="dataNascimento" value="Data de Nascimento " />
+						<p:calendar id="dataNascimento" value="#{loginBean.usuario.dataNascimento}" pattern="dd-MM-yyyy" mask="true" required="true" />
+						<p:message for="dataNascimento"/>
+
+						<p:commandButton id="submitButton" value="Salvar atualizações" action="#{perfilBean.save}" icon="ui-icon-check" />
+
+
+					</h:panelGrid>
+				</h:panelGrid>
+
+				<p:spacer height="20" />
+
+				<h:panelGrid columns="2">
+
+				</h:panelGrid>
+				<p:spacer height="25" />
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
