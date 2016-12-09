@@ -10,6 +10,11 @@
 	<description>Plataforma de Ensino para a Pós Graduação</description>
 
 	<properties>
+
+
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
+
 		<maven.test.skip>true</maven.test.skip>
 		<!--- Configuracao do Sonar -->
 
@@ -21,9 +26,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
-	<build>
-	  <finalName>ROOT</finalName>
-	</build>
+
+
+
 
 
 	<dependencies>
@@ -152,6 +157,22 @@
 			<version>3.2</version>
 			<classifier>with-deps</classifier>
 		</dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -226,5 +247,27 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
+
+
+<build>
+   
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+
+</build>
+
+
+
+
+
 
 </project>
