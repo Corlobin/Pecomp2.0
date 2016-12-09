@@ -1,7 +1,6 @@
 package br.ifes.pecomp.bean;
 
 import java.io.Serializable;
-import br.ifes.pecomp.session.*;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
