@@ -27,7 +27,7 @@
 
 				<p:panel id="panel" header="LOGIN" style="width:400px;margin-bottom:10px;">
 				
-					<h:form name="login" action="noticias" method="post">
+					<h:form name="login" id="formulario" action="noticias" method="post">
 						<p:focus context="panel" />
 						<p:messages />
 
@@ -55,7 +55,7 @@
 					
 					<h:panelGrid columns="2">
 						
-						<p:commandButton action="#{loginBean.verificaAcesso}"  value="Entrar" icon="ui-icon-check"/>
+						<p:commandButton action="#{loginBean.verificaAcesso}"  value="Entrar" icon="ui-icon-check" id = "entrar"/>
 
 						<p:button outcome="cadastro" value="Cadastrar" icon="fa fa-fw fa-edit"/>
 					

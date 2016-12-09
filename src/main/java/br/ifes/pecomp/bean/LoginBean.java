@@ -97,8 +97,9 @@ public class LoginBean extends AbstractBean implements Serializable {
 	{
 		this.pessoaRepository.update(usuario);
 	}
+		
 	
-	
+
     /**
      * Retorna usuario logado
      * 
