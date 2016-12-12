@@ -26,6 +26,10 @@ public class LoginBean extends AbstractBean implements Serializable {
 
 	public LoginBean() {
 		super();
+		
+	}
+	@PostConstruct
+	public void init(){
 		try{ 
 			pessoaRepository = new PessoaRepositoryImpl();
 		}
@@ -33,7 +37,6 @@ public class LoginBean extends AbstractBean implements Serializable {
 			
 		}
 	}
-
 	public String getEmail() {
 		return email;
 	}
