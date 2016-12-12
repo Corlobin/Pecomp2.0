@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-
+import javax.annotation.PostConstruct;
 import br.ifes.pecomp.entity.Pessoa;
 import br.ifes.pecomp.repository.PessoaRepositoryImpl;
 
