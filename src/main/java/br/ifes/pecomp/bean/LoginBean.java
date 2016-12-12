@@ -26,7 +26,12 @@ public class LoginBean extends AbstractBean implements Serializable {
 
 	public LoginBean() {
 		super();
-		pessoaRepository = new PessoaRepositoryImpl();
+		try{ 
+			pessoaRepository = new PessoaRepositoryImpl();
+		}
+		catch(Exception ex) {
+			
+		}
 	}
 
 	public String getEmail() {
