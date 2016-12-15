@@ -30,9 +30,6 @@ public class UserWizard extends AbstractBean implements Serializable {
 	private List<Materia> listMaterias;
 	private Materia materia;
 	
-	@PersistenceContext
-	private EntityManager entity;
-	
 	@Inject
 	private transient PessoaRepositoryImpl pessoaRepository;
 	private MateriaRepositoryImpl materiaRepository;
