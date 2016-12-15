@@ -22,12 +22,12 @@ public class AbstractRepository implements Serializable
 	 */
 	private static final long serialVersionUID = -8500709169970777519L;
 
-	private static EntityManager entityManager;
-	private static final EntityManagerFactory factory = Persistence.createEntityManagerFactory("Pecomp");
+	private EntityManager entityManager;
+	private EntityManagerFactory factory;
 	
 	public AbstractRepository() {
-		if( AbstractRepository.entityManager == null)
-			AbstractRepository.entityManager = factory.createEntityManager();
+		factory = Persistence.createEntityManagerFactory("Pecomp");
+		entityManager = factory.createEntityManager();
 	}
 	
 	protected EntityManager getEntityManager() {
