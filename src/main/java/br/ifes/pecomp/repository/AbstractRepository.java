@@ -26,8 +26,12 @@ public class AbstractRepository implements Serializable
 	private EntityManagerFactory factory;
 	
 	public AbstractRepository() {
+		try{ 
 		factory = Persistence.createEntityManagerFactory("Pecomp");
 		entityManager = factory.createEntityManager();
+		}catch(Exception ex) {
+			System.out.println("EXCECAO: " + ex.getMessage());
+		}
 	}
 	
 	protected EntityManager getEntityManager() {
