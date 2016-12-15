@@ -5,7 +5,7 @@
 	version="2.0">
 
 	<persistence-unit name="Pecomp" transaction-type="RESOURCE_LOCAL">
-	
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>  
 
 		<class>br.ifes.pecomp.entity.Apostila</class>
 		<class>br.ifes.pecomp.entity.Curso</class>
@@ -27,7 +27,7 @@
 
 			<!-- propriedades do hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />			
-        	<property name="hibernate.connection.driver_class" value = "org.postgresql.Driver"/>
+        		<property name="hibernate.connection.driver_class" value = "org.postgresql.Driver"/>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 
